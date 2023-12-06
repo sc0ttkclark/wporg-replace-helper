@@ -1,0 +1,22 @@
+{
+  "name": "wporg-replace-helper",
+  "version": "1.0.0",
+  "description": "A set of scripts that help with replacing version numbers and other text for a WordPress.org plugin.",
+  "scripts": {
+    "update-version-number": "npm run wporg-replace-stable-tag && npm run wporg-replace-plugin-version && npm run wporg-replace-plugin-version-constant && npm run wporg-replace-package-version",
+    "update-minimum-php": "npm run wporg-replace-requires-php",
+    "update-minimum-wp": "npm run wporg-replace-requires-at-least",
+    "update-tested-wp": "npm run wporg-replace-tested-up-to",
+    "wporg-replace-stable-tag": "replace 'Stable tag:(\\s+)([\\.\\d\\w\\-]*)\n' \"Stable tag:\\$1$npm_config_version_number\n\" readme.txt",
+    "wporg-replace-plugin-version": "replace 'Version:(\\s+)([\\.\\d\\w\\-]*)\n' \"Version:\\$1$npm_config_version_number\n\" $npm_config_plugin_file",
+    "wporg-replace-plugin-version-constant": "replace 'const FMC_PLUGIN_VERSION = \\'([\\.\\d\\w\\-]*)\\'' \"const FMC_PLUGIN_VERSION = '$npm_config_version_number'\" $npm_config_plugin_file",
+    "wporg-replace-package-version": "replace '\"version\": \"([\\.\\d\\w\\-]*)\",\n' \"\\\"version\\\": \\\"$npm_config_version_number\\\",\n\" package.json",
+    "wporg-replace-requires-php": "replace 'Requires PHP:(\\s+)([\\.\\d\\w\\-]*)\n' \"Requires PHP:\\$1$npm_config_required_php\n\" $npm_config_plugin_file readme.txt",
+    "wporg-replace-requires-at-least": "replace 'Requires at least:(\\s+)([\\.\\d\\w\\-]*)\n' \"Requires at least:\\$1$npm_config_minimum_wp\n\" $npm_config_plugin_file readme.txt",
+    "wporg-replace-tested-up-to": "replace 'Tested up to:(\\s+)([\\.\\d\\w\\-]*)\n' \"Tested up to:\\$1$npm_config_tested_wp\n\" $npm_config_plugin_file readme.txt"
+  },
+  "devDependencies": {
+    "replace": "^1.2.2"
+  },
+  "dependencies": {}
+}
