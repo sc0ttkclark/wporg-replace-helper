@@ -1,6 +1,6 @@
 {
   "name": "wporg-replace-helper",
-  "version": "",
+  "version": "1.0.0",
   "description": "A set of scripts that help with replacing version numbers and other text for a WordPress.org plugin.",
   "scripts": {
     "update-version-number": "npm run wporg-replace-package-version && npm run wporg-replace-stable-tag && npm run wporg-replace-plugin-version && npm run wporg-replace-plugin-version-constant && npm run wporg-replace-plugin-version-class-constant",
