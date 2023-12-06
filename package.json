@@ -15,8 +15,8 @@
     "wporg-replace-requires-at-least": "replace 'Requires at least:(\\s+)([\\.\\d\\w\\-]*)\n' \"Requires at least:\\$1$npm_config_minimum_wp\n\" $npm_config_plugin_file readme.txt",
     "wporg-replace-tested-up-to": "replace 'Tested up to:(\\s+)([\\.\\d\\w\\-]*)\n' \"Tested up to:\\$1$npm_config_tested_wp\n\" $npm_config_plugin_file readme.txt"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "replace": "^1.2.2"
-  },
-  "dependencies": {}
+  }
 }
